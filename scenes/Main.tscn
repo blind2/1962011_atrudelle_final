@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Niveau1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Niveau2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/main.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Niveau3.tscn" type="PackedScene" id=5]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Niveau1" parent="." instance=ExtResource( 2 )]
+
+[node name="Niveau2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5281.45, 1611.56 )
+
+[node name="Niveau3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 5568.66, -2026.42 )

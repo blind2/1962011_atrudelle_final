@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Player_Attack.png" type="Texture" id=1]
+[ext_resource path="res://scripts/joueur.gd" type="Script" id=2]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.0232, 23.7425 )
+
+[node name="Joueur" type="KinematicBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 1.70527, -1.10155 )
+scale = Vector2( 1.05795, 1.03289 )
+shape = SubResource( 1 )
+
+[node name="JoueurSprite" type="Sprite" parent="."]
+modulate = Color( 0.0588235, 0.00392157, 1, 1 )
+position = Vector2( 1.62751, -1.52277 )
+rotation = 1.5708
+scale = Vector2( 0.426061, 0.455885 )
+texture = ExtResource( 1 )
+
+[node name="Canon" type="Position2D" parent="JoueurSprite"]
+position = Vector2( 2.82535, -62.513 )
+rotation = -1.5708
+scale = Vector2( 2.19353, 2.34708 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="GUI" parent="Camera2D" instance=ExtResource( 3 )]
+margin_left = 29.5368
+margin_top = 22.7208
+margin_right = 29.5368
+margin_bottom = 22.7208
